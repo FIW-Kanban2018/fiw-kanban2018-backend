@@ -19,6 +19,7 @@ public class TaskService {
         System.out.println("Your working directory: " + workingDirectory);
         String id = data.get("id");
         File file = new File(workingDirectory + id + ".txt");
+        System.out.println(file.toURI());
         try {
             if (!file.exists()) {
                 file.createNewFile();
