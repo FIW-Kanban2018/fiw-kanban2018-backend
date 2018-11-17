@@ -1,6 +1,5 @@
 package de.htw.fiw2018.kanban;
 
-import java.util.Map;
 
 public abstract class Task {
 
@@ -15,8 +14,9 @@ public abstract class Task {
 //        this.recipient = recipient;
 //    }
 
-    public abstract void setData();
-
-    public abstract Map saveToMap();
+    public abstract void editTask();
+    public abstract void createTask();
+    public abstract void deleteTask();
+    public abstract void findTask();
 
 }
