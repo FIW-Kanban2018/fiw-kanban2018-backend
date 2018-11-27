@@ -9,16 +9,15 @@ import java.util.Map;
 
 @Entity
 @Table(name = "telefonat")
-public class Telefonat extends Task implements Serializable {
+public class Telefonat implements Task, Serializable {
 
-    // send data as key-value-pairs (json format)
+    private Map<String, String> newData = new HashMap();
+
+    // send data as key-value-pairs (json format) with id as key
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
-
-    @Column(name = "category")
-    String category = "telefonat";
 
     @Column(name = "caller")
     String caller;
@@ -38,29 +37,19 @@ public class Telefonat extends Task implements Serializable {
     @Column(name = "lastmodified")
     Date lastModifiedDate;
 
-    public Telefonat(Long id, String caller, String phoneNumber, String message, Date date) {
-        this.id = id;
-        this.caller = caller;
-        this.phoneNumber = phoneNumber;
-        this.message = message;
-        this.date = date;
-    }
-
-    public Map saveToMap() {
-        Map<String, String> data = new HashMap();
-        data.put("id", id.toString());
-        data.put("caller", caller);
-        data.put("phoneNumber", phoneNumber);
-        data.put("message", message);
-        data.put("date", date.toString());
-        return data;
+    public void process(String category, Map<Long, String> data) {
+        newData.put("id", id.toString());
+        newData.put("caller", caller);
+        newData.put("phoneNumber", phoneNumber);
+        newData.put("message", message);
+        newData.put("date", date.toString());
     }
 
     public void editTask() {
 
     }
 
-    public void createTask() {
+    public void createTask(Map<String, String> data) {
 
     }
 

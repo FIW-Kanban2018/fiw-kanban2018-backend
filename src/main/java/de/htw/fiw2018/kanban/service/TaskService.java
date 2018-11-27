@@ -1,6 +1,8 @@
 package de.htw.fiw2018.kanban.service;
 
 import de.htw.fiw2018.kanban.model.Task;
+import de.htw.fiw2018.kanban.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -12,6 +14,12 @@ import java.util.Map;
 
 @Service
 public class TaskService {
+
+    @Autowired
+    TaskRepository taskRepository;
+
+    @Autowired
+            Task task;
 
     String workingDirectory = System.clearProperty("user.dir") + File.separator;
 
@@ -39,8 +47,8 @@ public class TaskService {
         }
     }
 
-    public Task findTask(int id) {
-    return null;
+    public Task findTask(String category, int id){
+        return taskRepository.findById(category, id);
     }
 
     public Task updateTask(int id) {
@@ -51,7 +59,12 @@ public class TaskService {
     return true;
     }
 
-    public List findAllTasks() {
+    public List findAllTasksPerCategory(String category) {
     return null;
     }
+
+    public List findAllTasks() {
+        return null;
+    }
+
 }

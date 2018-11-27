@@ -32,9 +32,10 @@ public class TaskController {
                 taskService.createTask(data);
         }
 
-        @GetMapping(path = {"/id"})
-        public Task findTask(@PathVariable int id) {
-        return taskService.findTask(id);
+        @GetMapping(path = {"/category/id"})
+        public Task findTask(@PathVariable String category, Long id) {
+
+                return taskService.findTask(category, id);
         }
 
         @PutMapping
@@ -47,8 +48,13 @@ public class TaskController {
                 return taskService.deleteTask(id);
         }
 
-        @GetMapping
+        @GetMapping(path = {"/category/all"})
+        public List findAllTasksPerCategory(@PathVariable String category) {
+            return taskService.findAllTasksPerCategory(category);
+        }
+
+        @GetMapping(path = "/all")
         public List findAllTasks() {
-            return taskService.findAllTasks();
+                return taskService.findAllTasks();
         }
 }
