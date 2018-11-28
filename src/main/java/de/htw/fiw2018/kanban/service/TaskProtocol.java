@@ -1,3 +1,4 @@
+/*
 package de.htw.fiw2018.kanban.service;
 
 import de.htw.fiw2018.kanban.model.Task;
@@ -7,7 +8,9 @@ import de.htw.fiw2018.kanban.model.Veranstaltung;
 import java.util.HashMap;
 import java.util.Map;
 
-/*Only needed for creating or updating a task?! */
+*/
+/*Only needed for creating or updating a task?! *//*
+
 public class TaskProtocol implements Task {
 
     // String is category, Task enthält die Map.
@@ -24,3 +27,4 @@ public class TaskProtocol implements Task {
         task.get("category").process(data);
     }
 }
+*/
