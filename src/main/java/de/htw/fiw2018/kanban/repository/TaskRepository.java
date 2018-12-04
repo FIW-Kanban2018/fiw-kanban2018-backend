@@ -21,12 +21,14 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
     //TODO: Was ist ein Optional?
     //TODO: ID ist eine Variable --> noch nicht implementiert!
-    @Query("SELECT * FROM telefonat t WHERE t.id = 'title'")
+    @Query("SELECT t FROM telefonat t WHERE t.id = 'title'")
     Optional<Task> findById(String category, Long id);
 
     void deleteById(Long id);
 
     void saveTask(Map<String, String> data);
+
+    void updateTaskById(Long id, Map<String, String> data);
 
 
     // trying to get git to merge this into master branch
