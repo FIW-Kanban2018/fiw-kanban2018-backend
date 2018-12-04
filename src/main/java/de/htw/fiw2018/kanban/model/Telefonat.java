@@ -9,6 +9,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "telefonat")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Telefonat implements Task, Serializable {
 
     private Map<String, String> newData = new HashMap();
@@ -37,7 +38,7 @@ public class Telefonat implements Task, Serializable {
     @Column(name = "lastmodified")
     Date lastModifiedDate;
 
-    public void process(String category, Map<Long, String> data) {
+    public void process(Map<String, String> data) {
         newData.put("id", id.toString());
         newData.put("caller", caller);
         newData.put("phoneNumber", phoneNumber);
@@ -48,6 +49,7 @@ public class Telefonat implements Task, Serializable {
     public void editTask() {
 
     }
+
 
     public void createTask(Map<String, String> data) {
 

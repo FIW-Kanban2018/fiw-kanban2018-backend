@@ -56,7 +56,7 @@ public class TaskController {
                 }
         }
 
-        @GetMapping(path = {"/category/id"})
+        @GetMapping(path = "/{category}/{id}")
         @RequestMapping(path = "/findbyid")
         public Task findTask(@PathVariable String category, Long id) {
 
