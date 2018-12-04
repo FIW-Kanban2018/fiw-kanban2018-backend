@@ -7,14 +7,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+
+// For lack of a @Table annotation, it is assumed that this
+// entity will be mapped to a table named Telefonat
 @Entity
-@Table(name = "telefonat")
+//@Table(name = "telefonat")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Telefonat implements Task, Serializable {
 
     private Map<String, String> newData = new HashMap();
 
     // send data as key-value-pairs (json format) with id as key
+    // @GeneratedValue indicates that the ID value will be generated automatically
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
@@ -46,22 +50,10 @@ public class Telefonat implements Task, Serializable {
         newData.put("date", date.toString());
     }
 
-    public void editTask() {
-
-    }
-
-
-    public void createTask(Map<String, String> data) {
-
-    }
-
-    public void deleteTask() {
-
-    }
-
-    public void findTask() {
-
-    }
+//    public void editTask() {}
+//    public void createTask(Map<String, String> data) {}
+//    public void deleteTask() {}
+//    public void findTask() {}
 
     public Long getId() {
         return this.id;
