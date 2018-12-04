@@ -7,10 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -30,8 +26,6 @@ public class TaskController {
 
     @Autowired
     TaskRepository taskRepository;
-
-    String workingDirectory = System.clearProperty("user.dir") + File.separator;
 
     @PostMapping
     public void createTask(@RequestBody Map<String, String> data) {
