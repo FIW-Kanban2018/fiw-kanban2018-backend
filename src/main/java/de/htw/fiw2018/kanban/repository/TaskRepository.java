@@ -31,8 +31,4 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
     void updateTaskById(Long id, Map<String, String> data);
 
-
-    // trying to get git to merge this into master branch
-
-
 }
