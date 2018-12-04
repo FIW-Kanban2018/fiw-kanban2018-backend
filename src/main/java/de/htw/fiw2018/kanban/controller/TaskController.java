@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -34,35 +35,39 @@ public class TaskController {
 
     @PostMapping
     public void createTask(@RequestBody Map<String, String> data) {
-        String id = data.get("id");
+        // String id = data.get("id");
         //            data.forEach((key, value) -> {
         //  }
+        taskRepository.saveTask(data);
     }
 
     @GetMapping(path = "/{category}/{id}")
     // @RequestMapping(path = "/findbyid")
-    public Task findTask(@PathVariable String category, Long id) {
+    //TODO: check return type of this method!
+    public Optional<Task> findTask(@PathVariable String category, Long id) {
 
-        return taskRepository.findTask(category, id);
+        return taskRepository.findById(category, id);
     }
 
     @PutMapping(path = "/{category}/{id}")
-    public void updateTask(int id) {
-        taskRepository.updateTask(id);
+    public void updateTask(Long id, @RequestBody Map<String, String> data) {
+        taskRepository.updateTaskById(id, data);
     }
 
     @DeleteMapping(path = "/{id}")
-    public boolean deleteTask(@PathVariable int id) {
-        return taskRepository.deleteTask(id);
+    public void deleteTask(@PathVariable Long id) {
+        taskRepository.deleteById(id);
     }
 
     @GetMapping(path = "/{category}/{id}")
-    public List findAllTasksPerCategory(@PathVariable String category) {
-        return taskRepository.findAllTasksPerCategory(category);
+    //TODO: Ist der return type korrekt?
+    public Iterable<Task> findAllTasksPerCategory(@PathVariable String category) {
+        return taskRepository.findAllByCategory(category);
     }
 
     @GetMapping(path = "/all")
-    public List findAllTasks() {
-        return taskRepository.findAllTasks();
+    //TODO: Ist der return type korrekt?
+    public Iterable<Task> findAllTasks() {
+        return taskRepository.findAll();
     }
 }

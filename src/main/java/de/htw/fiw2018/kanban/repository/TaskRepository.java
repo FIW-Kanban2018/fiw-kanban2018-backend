@@ -17,6 +17,7 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     //Finds all tasks of all categories
     Iterable<Task> findAll();
 
+    //Finds all tasks of one specific category
     Iterable<Task> findAllByCategory(String entity);
 
     //TODO: Was ist ein Optional?
