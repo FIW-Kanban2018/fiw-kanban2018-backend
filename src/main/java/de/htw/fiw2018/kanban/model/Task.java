@@ -4,6 +4,8 @@ package de.htw.fiw2018.kanban.model;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.time.DateTimeException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Map;
 
@@ -32,14 +34,14 @@ abstract public class Task {
     private Date lastmodified;
 
     @PreUpdate
-    void onPreUpdate{}{ //wird vor dem Update aufgerufen
-        lastmodified =now;
+    void onPreUpdate(){ //wird vor dem Update aufgerufen
+        lastmodified.getTime(); //?????
     }
 
     @PrePersist
-    void onPrePersist{}{ //wird vor dem Insert aufgerufen
-        created = now;
-        lastmodified =now;
+    void onPrePersist(){ //wird vor dem Insert aufgerufen
+        created.getTime();                   //???????????
+        lastmodified.getTime();                 //??????????
     }
 
 //
