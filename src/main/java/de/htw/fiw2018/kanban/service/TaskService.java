@@ -48,7 +48,7 @@ public class TaskService {
     }
 
     public Task findTask(String category, int id){
-        return taskRepository.findById(category, id);
+        return taskRepository.findById((long)id).get(); //optional ist eine wrapper klasse, .get gibt das zurück was im optional drinsteht
     }
 
     public Task updateTask(int id) {

@@ -9,15 +9,13 @@ import java.util.Map;
 
 @Entity
 @Table(name = "telefonat")
-public class Telefonat implements Task, Serializable {
-
+public class Telefonat extends Task implements Serializable //Telefonat unterklasse von task, implementiert serialiable
+{
+    @Transient //er soll das nicht speichern/mappen
     private Map<String, String> newData = new HashMap();
 
     // send data as key-value-pairs (json format) with id as key
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
+
 
     @Column(name = "caller")
     String caller;
@@ -31,13 +29,10 @@ public class Telefonat implements Task, Serializable {
     @Column(name = "date")
     Date date;
 
-    @Column(name = "created")
-    Date createdDate;
 
-    @Column(name = "lastmodified")
-    Date lastModifiedDate;
 
-    public void process(String category, Map<Long, String> data) {
+    @Override //überschreibt übergeordnete Methode
+    public void process(Map<Long, String> data) {
         newData.put("id", id.toString());
         newData.put("caller", caller);
         newData.put("phoneNumber", phoneNumber);

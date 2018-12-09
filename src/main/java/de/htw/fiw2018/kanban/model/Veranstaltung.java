@@ -8,12 +8,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "veranstaltung")
-public class Veranstaltung implements Task {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
+public class Veranstaltung extends Task {
 
     @Column(name = "category")
     private String category = "veranstaltung";
@@ -22,7 +17,7 @@ public class Veranstaltung implements Task {
     private Date date;
 
     @Override
-    public void process(String category, Map<Long, String> data) {
+    public void process(Map<Long, String> data) {
 
     }
 }

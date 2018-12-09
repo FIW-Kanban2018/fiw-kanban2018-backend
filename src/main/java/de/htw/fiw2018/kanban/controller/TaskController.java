@@ -35,7 +35,7 @@ public class TaskController {
         @GetMapping(path = {"/category/id"})
         public Task findTask(@PathVariable String category, Long id) {
 
-                return taskService.findTask(category, id);
+                return taskService.findTask(category, Math.toIntExact(id)); //Math.toIntExact macht long in ein int.... da long größer als int ist muss man das so machen
         }
 
         @PutMapping

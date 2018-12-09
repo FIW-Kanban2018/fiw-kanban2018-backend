@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*Only needed for creating or updating a task?! */
-public class TaskProtocol implements Task {
+public class TaskProtocol {
 
     // String is category, Task enthält die Map.
     // TODO: Oder eine Map<String,String> anstatt TAsk?
@@ -19,8 +19,8 @@ public class TaskProtocol implements Task {
         task.put("veranstaltung", new Veranstaltung());
     }
 
-    @Override
-    public void process(Map<String, String> data) {
+
+    public void process(Map<Long, String> data) {
         task.get("category").process(data);
     }
 }

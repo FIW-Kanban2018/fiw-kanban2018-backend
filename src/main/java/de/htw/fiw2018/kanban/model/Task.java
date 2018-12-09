@@ -3,16 +3,45 @@ package de.htw.fiw2018.kanban.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Map;
 
-@Component
-public interface Task {
+@Entity
+abstract public class Task {
 
-//    Long id;
-//    String category;
-//    Date createdDate;
-//    Date lastModifiedDate;
+  // String category;
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
+    Long id;
+
+    @Column(name = "created")
+    Date createdDate;
+
+    @Column(name = "lastmodified")
+    Date lastModifiedDate;
+
+
+    @Column (updatable = false) //readonly
+    private Date created;
+
+    @Column
+    private Date lastmodified;
+
+    @PreUpdate
+    void onPreUpdate{}{ //wird vor dem Update aufgerufen
+        lastmodified =now;
+    }
+
+    @PrePersist
+    void onPrePersist{}{ //wird vor dem Insert aufgerufen
+        created = now;
+        lastmodified =now;
+    }
+
 //
 //    public abstract void editTask();
 //    public abstract void createTask();
@@ -20,5 +49,5 @@ public interface Task {
 //    public abstract  void findTask();
 //    public abstract Long getId();
 
-    void process(Map<Long, String> data);
+    abstract public void process(Map<Long, String> data);
 }
