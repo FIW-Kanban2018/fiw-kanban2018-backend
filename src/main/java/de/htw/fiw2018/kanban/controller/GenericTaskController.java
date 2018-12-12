@@ -1,11 +1,12 @@
 package de.htw.fiw2018.kanban.controller;
 
-import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
+import de.htw.fiw2018.kanban.model.GenericTaskEntity;
 import de.htw.fiw2018.kanban.repository.GenericTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Optional;

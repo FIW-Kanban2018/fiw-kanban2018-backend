@@ -2,7 +2,7 @@
 //
 //
 //import de.htw.fiw2018.kanban.repository.GenericTaskRepository;
-//import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
+//import de.htw.fiw2018.kanban.model.GenericTaskEntity;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;
 //
