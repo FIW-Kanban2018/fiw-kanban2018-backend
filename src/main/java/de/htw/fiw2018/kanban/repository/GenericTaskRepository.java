@@ -25,6 +25,8 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
     @Query("SELECT t FROM telefonat t WHERE t.id = 'title'")
     Optional<GenericTaskEntity> findById(String category, Long id);
 
+    //TODO: Check Query
+    @Query("DELETE FROM Telefonat where ID")
     void delete(Long id);
 
     void save(Map<String, String> data);

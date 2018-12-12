@@ -23,12 +23,23 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     Long id;
 
-    @Column(name = "created_at", nullable = false)
-    Date createdAt;
+    @Column(name = "created", nullable = false, updatable = false)
+    Date created;
 
-    @Column(name = "updated_at", nullable = false)
-    Date updatedAt;
+    @Column(name = "lastmodified", nullable = false)
+    Date lastmodified;
 
+
+    @PreUpdate
+    void onPreUpdate(){ //wird vor dem Update aufgerufen
+        lastmodified.getTime(); //?????
+    }
+
+    @PrePersist
+    void onPrePersist(){ //wird vor dem Insert aufgerufen
+        created.getTime();                   //???????????
+        lastmodified.getTime();                 //??????????
+    }
 
     // TODO: Sollte die Map of Type <String, Object> sein?
     abstract void process(Map<String, String> data);
@@ -37,19 +48,19 @@ public abstract class GenericTaskEntity implements Serializable {
         return id;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public Date getCreated() {
+        return created;
     }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
+    public Date getLastmodified() {
+        return lastmodified;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated(Date createdAt) {
+        this.created = created;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setLastmodified(Date updatedAt) {
+        this.lastmodified = lastmodified;
     }
 }
