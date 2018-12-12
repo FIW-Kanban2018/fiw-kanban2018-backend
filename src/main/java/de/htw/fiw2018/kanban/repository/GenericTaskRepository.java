@@ -1,6 +1,6 @@
 package de.htw.fiw2018.kanban.repository;
 
-import de.htw.fiw2018.kanban.model.GenericTaskEntity;
+import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
