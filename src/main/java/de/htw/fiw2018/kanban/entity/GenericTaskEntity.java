@@ -23,7 +23,7 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     Long id;
 
-    @Column(name = "created", nullable = false, updatable = false)
+    @Column(name = "created", nullable = false, updatable = false) //readonly
     Date created;
 
     @Column(name = "lastmodified", nullable = false)
@@ -32,13 +32,13 @@ public abstract class GenericTaskEntity implements Serializable {
 
     @PreUpdate
     void onPreUpdate(){ //wird vor dem Update aufgerufen
-        lastmodified.getTime(); //?????
+        lastmodified.getTime(); //getTime = Datum + Uhrzeit
     }
 
     @PrePersist
     void onPrePersist(){ //wird vor dem Insert aufgerufen
-        created.getTime();                   //???????????
-        lastmodified.getTime();                 //??????????
+        created.getTime();
+        lastmodified.getTime();
     }
 
     // TODO: Sollte die Map of Type <String, Object> sein?
