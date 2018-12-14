@@ -17,14 +17,14 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
     private Date dateOfEvent;
 
 
-    @Override
-    public void process(Map<String, String> data) {
-        newData.put("id", String.valueOf(data.get("id")));
-        newData.put("ort", data.get("ort"));
-        newData.put("dateOfEvent", String.valueOf(data.get("dateOfEvent")));
-        newData.put("createdAt", String.valueOf(data.get("createdAt")));
-        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
-    }
+//    @Override
+//    public void process(Map<String, String> data) {
+//        newData.put("id", String.valueOf(data.get("id")));
+//        newData.put("ort", data.get("ort"));
+//        newData.put("dateOfEvent", String.valueOf(data.get("dateOfEvent")));
+//        newData.put("createdAt", String.valueOf(data.get("createdAt")));
+//        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
+//    }
 
     public String getOrt() {
         return ort;

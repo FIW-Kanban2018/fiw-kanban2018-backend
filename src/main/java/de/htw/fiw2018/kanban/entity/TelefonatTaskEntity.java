@@ -24,14 +24,14 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     String message;
 
 
-    public void process(Map<String, String> data) {
-        newData.put("id", String.valueOf(data.get("id")));
-        newData.put("caller", data.get("caller"));
-        newData.put("phoneNumber", data.get("phoneNumber"));
-        newData.put("message", data.get("message"));
-        newData.put("createdAt", String.valueOf(data.get("createdAt")));
-        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
-    }
+//    public void process(Map<String, String> data) {
+//        newData.put("id", String.valueOf(data.get("id")));
+//        newData.put("caller", data.get("caller"));
+//        newData.put("phoneNumber", data.get("phoneNumber"));
+//        newData.put("message", data.get("message"));
+//        newData.put("createdAt", String.valueOf(data.get("createdAt")));
+//        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
+//    }
 
     public String getCaller() {
         return caller;

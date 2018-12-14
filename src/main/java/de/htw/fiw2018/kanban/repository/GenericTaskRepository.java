@@ -3,11 +3,13 @@ package de.htw.fiw2018.kanban.repository;
 import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@NoRepositoryBean
 public interface GenericTaskRepository<T extends GenericTaskEntity> extends CrudRepository<GenericTaskEntity, Long> {
 
 //    Optional<Task> findById(Long id);
@@ -22,8 +24,8 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
 
     //TODO: Was ist ein Optional?
     //TODO: ID ist eine Variable --> noch nicht implementiert!
-    @Query("SELECT t FROM telefonat t WHERE t.id = 'title'")
-    Optional<GenericTaskEntity> findById(String category, Long id);
+    @Query("SELECT t FROM #{#entityName} t WHERE t.id = 'title'")
+    Optional<T> findById(String category, Long id);
 
     //TODO: Check Query
     @Query("DELETE FROM Telefonat where ID")
