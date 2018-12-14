@@ -23,23 +23,23 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     Long id;
 
-    @Column(name = "created", nullable = false, updatable = false) //readonly
-    Date created;
+//    @Column(name = "created", nullable = false, updatable = false) //readonly
+//    Date created;
 
-    @Column(name = "lastmodified", nullable = false)
-    Date lastmodified;
+//    @Column(name = "lastmodified", nullable = false)
+//    Date lastmodified;
 
 
-    @PreUpdate
-    void onPreUpdate(){ //wird vor dem Update aufgerufen
-        lastmodified.getTime(); //getTime = Datum + Uhrzeit
-    }
+//    @PreUpdate
+//    void onPreUpdate(){ //wird vor dem Update aufgerufen
+//        lastmodified.getTime(); //getTime = Datum + Uhrzeit
+//    }
 
-    @PrePersist
-    void onPrePersist(){ //wird vor dem Insert aufgerufen
-        created.getTime();
-        lastmodified.getTime();
-    }
+//    @PrePersist
+//    void onPrePersist(){ //wird vor dem Insert aufgerufen
+//        created.getTime();
+//        lastmodified.getTime();
+//    }
 
     // TODO: Sollte die Map of Type <String, Object> sein?
 //    abstract void process(Map<String, String> data);
@@ -48,19 +48,19 @@ public abstract class GenericTaskEntity implements Serializable {
         return id;
     }
 
-    public Date getCreated() {
-        return created;
-    }
+//    public Date getCreated() {
+//        return created;
+//    }
 
-    public Date getLastmodified() {
-        return lastmodified;
-    }
+//    public Date getLastmodified() {
+//        return lastmodified;
+//    }
 
-    public void setCreated(Date createdAt) {
-        this.created = created;
-    }
+//    public void setCreated(Date createdAt) {
+//        this.created = created;
+//    }
 
-    public void setLastmodified(Date updatedAt) {
-        this.lastmodified = lastmodified;
-    }
+//    public void setLastmodified(Date updatedAt) {
+//        this.lastmodified = lastmodified;
+//    }
 }

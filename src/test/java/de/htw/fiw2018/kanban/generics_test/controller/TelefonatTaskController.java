@@ -13,7 +13,7 @@ public class TelefonatTaskController extends GenericTaskController<TelefonatTask
 //    private TelefonatTaskRepository repo;
 
     public void createTask(TelefonatTaskEntity task) {
-        task.setCreated(new Date());
+//        task.setCreated(new Date());
 
 //        repo.save(task);
 

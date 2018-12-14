@@ -1,4 +1,6 @@
 package de.htw.fiw2018.kanban.repository;
 
-public class TelefonatTaskRepository {
+import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
+
+public interface TelefonatTaskRepository extends GenericTaskRepository<TelefonatTaskEntity> {
 }

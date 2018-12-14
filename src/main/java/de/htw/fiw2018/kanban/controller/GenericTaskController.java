@@ -10,33 +10,41 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/task")
+//@RestController
+//@RequestMapping("/task")
 abstract class GenericTaskController<T, Id extends Serializable> {
 
-    @Autowired
-    GenericTaskRepository taskRepository;
+//    @Autowired
+//    GenericTaskRepository taskRepository;
 
     private CrudRepository<T, Id> repository;
 
-    public GenericTaskController(CrudRepository<T, Id> repository){
-        this.repository = repository;
+//    public GenericTaskController(CrudRepository<T, Id> repository){
+//        this.repository = repository;
+//    }
+
+
+    @PostMapping(path = "/mda_save")
+    public void foobar(@RequestBody T data) {
+//        taskRepository.save(data);
     }
 
-    @RequestMapping(path = "/hello")
+
+    @GetMapping(path = "/hello")
     public String hello(){
         return "Hello Frau S.!";
     }
 
     @PostMapping(path = "/save")
     public void createTask(@RequestBody Map<String, String> data) {
-        taskRepository.save(data);
+//        taskRepository.save(data);
     }
 
     @GetMapping(path = "/find")
     //TODO: check return type of this method!
     public Optional<GenericTaskEntity> findTask(@PathVariable Long id) {
-        return taskRepository.findById(id);
+        return null;
+//        return taskRepository.findById(id);
     }
 }
 
