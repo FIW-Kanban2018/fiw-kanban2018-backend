@@ -1,13 +1,10 @@
 package de.htw.fiw2018.kanban.controller;
 
-import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
 import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
