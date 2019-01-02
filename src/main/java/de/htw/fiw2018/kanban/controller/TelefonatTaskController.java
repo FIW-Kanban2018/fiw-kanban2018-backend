@@ -1,9 +1,12 @@
 package de.htw.fiw2018.kanban.controller;
 
+import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
 import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/telefonat")
@@ -15,6 +18,15 @@ public class TelefonatTaskController extends GenericTaskController {
     @GetMapping(path = "/hello")
     public String hello(){
         return "Hello Frau S.!";
+    }
+
+    @GetMapping(path = "/all")
+    public
+
+
+    @GetMapping(path = "/{id}")
+    public Optional<TelefonatTaskEntity> findTask(@PathVariable Long id) {
+        return repo.findById(id);
     }
 
 
@@ -35,8 +47,5 @@ public class TelefonatTaskController extends GenericTaskController {
 
         return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
     }
-
-
-
 
 }
