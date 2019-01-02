@@ -6,6 +6,8 @@ import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -15,14 +17,17 @@ public class TelefonatTaskController extends GenericTaskController {
     @Autowired
     private TelefonatTaskRepository repo;
 
+    Iterable<TelefonatTaskEntity> telefonatTasks;
+
     @GetMapping(path = "/hello")
     public String hello(){
         return "Hello Frau S.!";
     }
 
     @GetMapping(path = "/all")
-    public
-
+    public Iterable<TelefonatTaskEntity> findAll() {
+        return repo.findAll();
+    }
 
     @GetMapping(path = "/{id}")
     public Optional<TelefonatTaskEntity> findTask(@PathVariable Long id) {
