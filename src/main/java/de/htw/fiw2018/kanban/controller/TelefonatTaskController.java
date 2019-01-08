@@ -31,6 +31,9 @@ public class TelefonatTaskController extends GenericTaskController {
         return repo.findById(id);
     }
 
+    @DeleteMapping(path = "/{id}")
+    public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
+
 
     /**
      * Example request:
