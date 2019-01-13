@@ -17,11 +17,11 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     @Column(name = "caller")
     String caller;
 
-    @Column(name = "phonenumber")
-    String phoneNumber;
-
     @Column(name = "message")
     String message;
+
+    @Column(name = "phonenumber")
+    String phoneNumber;
 
 
 //    public void process(Map<String, String> data) {

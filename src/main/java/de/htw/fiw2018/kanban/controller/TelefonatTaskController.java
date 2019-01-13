@@ -53,4 +53,6 @@ public class TelefonatTaskController extends GenericTaskController {
         return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
     }
 
+
+
 }
