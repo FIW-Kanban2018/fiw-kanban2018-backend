@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+//@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RestController
 @RequestMapping("/telefonat")
 public class TelefonatTaskController extends GenericTaskController {
@@ -32,6 +33,7 @@ public class TelefonatTaskController extends GenericTaskController {
     }
 
 
+
     /**
      * Example request:
      * <code>
@@ -49,5 +51,7 @@ public class TelefonatTaskController extends GenericTaskController {
 
         return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
     }
+
+
 
 }
