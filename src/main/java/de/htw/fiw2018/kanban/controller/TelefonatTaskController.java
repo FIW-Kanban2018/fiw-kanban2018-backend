@@ -31,6 +31,8 @@ public class TelefonatTaskController extends GenericTaskController {
         return repo.findById(id);
     }
 
+  @DeleteMapping(path = "/{id}")
+    public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
 
     /**
@@ -50,7 +52,4 @@ public class TelefonatTaskController extends GenericTaskController {
 
         return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
     }
-
-
-
 }
