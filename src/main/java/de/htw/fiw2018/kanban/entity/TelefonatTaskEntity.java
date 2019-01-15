@@ -4,6 +4,7 @@ package de.htw.fiw2018.kanban.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 
 // If @Table annotation is missing, it is assumed that this
@@ -23,7 +24,7 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     String phoneNumber;
 
     @Column(name = "date")
-    String date;
+    Date date;
 
 
 //    public void process(Map<String, String> data) {
@@ -60,11 +61,11 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     }
 
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
