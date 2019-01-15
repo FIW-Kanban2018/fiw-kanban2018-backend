@@ -49,7 +49,7 @@ public class TelefonatTaskController extends GenericTaskController {
 
         repo.save(entity);
 
-        return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
+        return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }
 
 

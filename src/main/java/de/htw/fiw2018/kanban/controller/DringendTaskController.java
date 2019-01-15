@@ -12,16 +12,16 @@ public class DringendTaskController extends GenericTaskController {
 @Autowired
     private DringendTaskRepository repo;
 
-Iterable<DringendTaskEntity> dringendtasks;
+    Iterable<DringendTaskEntity> dringendtasks;
 
-//@GetMapping("/task")
-  //  public Iterable<DringendTaskEntity> findTask() {return repo.findTask();}
+    @GetMapping("/all")
+    public Iterable<DringendTaskEntity> findAll() {return repo.findAll();}
 
     @PostMapping(path = "/newtask")
     public String newTest(@RequestBody DringendTaskEntity entity) {
 
         repo.save(entity);
 
-        return "Foo" + entity.getTask(); // returns "Foo123"
+        return entity.getTask(); // returns task
     }
 }
