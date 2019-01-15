@@ -17,12 +17,14 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     @Column(name = "caller")
     String caller;
 
-    @Column(name = "phonenumber")
-    String phoneNumber;
-
     @Column(name = "message")
     String message;
 
+    @Column(name = "phonenumber")
+    String phoneNumber;
+
+    @Column(name = "date")
+    String date;
 
 //    public void process(Map<String, String> data) {
 //        newData.put("id", String.valueOf(data.get("id")));
@@ -54,6 +56,14 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     }
 
     public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDate() {
+        return message;
+    }
+
+    public void setDate(String message) {
         this.message = message;
     }
 }
