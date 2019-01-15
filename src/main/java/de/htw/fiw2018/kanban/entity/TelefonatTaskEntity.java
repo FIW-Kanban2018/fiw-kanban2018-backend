@@ -24,6 +24,8 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     String phoneNumber;
 
 
+
+
 //    public void process(Map<String, String> data) {
 //        newData.put("id", String.valueOf(data.get("id")));
 //        newData.put("caller", data.get("caller"));

@@ -13,7 +13,6 @@ public class TelefonatTaskController extends GenericTaskController {
 
     @Autowired
     private TelefonatTaskRepository repo;
-
     Iterable<TelefonatTaskEntity> telefonatTasks;
 
     @GetMapping(path = "/hello")
