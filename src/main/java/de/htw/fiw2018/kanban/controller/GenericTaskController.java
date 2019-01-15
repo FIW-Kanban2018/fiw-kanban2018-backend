@@ -12,6 +12,7 @@ import java.util.Optional;
 
 //@RestController
 //@RequestMapping("/task")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 abstract class GenericTaskController<T, Id extends Serializable> {
 
 //    @Autowired
