@@ -17,6 +17,9 @@ public class DringendTaskController extends GenericTaskController {
     @GetMapping("/all")
     public Iterable<DringendTaskEntity> findAll() {return repo.findAll();}
 
+    @DeleteMapping("/{id}")
+    public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
+
     @PostMapping(path = "/newtask")
     public String newTest(@RequestBody DringendTaskEntity entity) {
 
