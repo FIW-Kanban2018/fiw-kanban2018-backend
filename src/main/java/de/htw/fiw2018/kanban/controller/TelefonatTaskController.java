@@ -39,7 +39,7 @@ public class TelefonatTaskController extends GenericTaskController {
      * Example request:
      * <code>
      *   {
-     * 	  "phoneNumber": "123"
+     * 	  "phonenumber": "123"
      *   }
      * </code>
      * @param entity
@@ -50,7 +50,7 @@ public class TelefonatTaskController extends GenericTaskController {
 
         repo.save(entity);
 
-        return "Foo" + entity.getPhoneNumber(); // returns "Foo123"
+        return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }
 
 
