@@ -1,20 +1,21 @@
 package de.htw.fiw2018.kanban.controller;
 
-import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
-import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
+import de.htw.fiw2018.kanban.entity.WanderkarteTaskEntity;
+import de.htw.fiw2018.kanban.entity.WanderkarteTaskEntity;
+import de.htw.fiw2018.kanban.repository.WanderkarteTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/telefonat")
-public class TelefonatTaskController extends GenericTaskController {
+@RequestMapping("/wanderkarte")
+public class WanderkarteTaskController extends GenericTaskController {
 
     @Autowired
-    private TelefonatTaskRepository repo;
+    private WanderkarteTaskRepository repo;
 
-    Iterable<TelefonatTaskEntity> telefonatTasks;
+    Iterable<WanderkarteTaskEntity> wanderkarteTasks;
 
     @GetMapping(path = "/hello")
     public String hello(){
@@ -22,35 +23,24 @@ public class TelefonatTaskController extends GenericTaskController {
     }
 
     @GetMapping(path = "/all")
-    public Iterable<TelefonatTaskEntity> findAll() {
+    public Iterable<WanderkarteTaskEntity> findAll() {
         return repo.findAll();
     }
 
     @GetMapping(path = "/{id}")
-    public Optional<TelefonatTaskEntity> findTask(@PathVariable Long id) {
+    public Optional<WanderkarteTaskEntity> findTask(@PathVariable Long id) {
         return repo.findById(id);
     }
 
     @DeleteMapping(path = "/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
-
-    /**
-     * Example request:
-     * <code>
-     *   {
-     * 	  "phonenumber": "123"
-     *   }
-     * </code>
-     * @param entity
-     * @return
-     */
     @PostMapping(path = "/new")
-    public String newTest(@RequestBody TelefonatTaskEntity entity) {
+    public String newTest(@RequestBody WanderkarteTaskEntity entity) {
 
         repo.save(entity);
 
-        return "Foo" + entity.getPhonenumber(); // returns "Foo123"
+        return "Karte mit folgendem Titel wurde erstellt" + entity.getTitle(); // returns "Foo123"
     }
 
 

@@ -8,64 +8,54 @@ import java.util.Date;
 
 
 // If @Table annotation is missing, it is assumed that this
-// entity will be mapped to a table named TelefonatTaskEntity
+// entity will be mapped to a table named WanderkarteTaskEntity
 @Entity
-@Table(name = "telefonat")
+@Table(name = "wanderkarte")
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class TelefonatTaskEntity extends GenericTaskEntity {
+public class WanderkarteTaskEntity extends GenericTaskEntity {
 
-    @Column(name = "caller")
-    String caller;
+    @Column(name = "title")
+    String title;
+
+    @Column(name = "typ")
+    String typ;
+
+    @Column(name = "von")
+    String von;
+
+    @Column(name = "an")
+    String an;
+
+    @Column(name = "datum")
+    String datum;
+
+    @Column(name = "deadline")
+    String deadline;
 
     @Column(name = "message")
     String message;
 
-    @Column(name = "phonenumber")
-    String phonenumber;
-
-    @Column(name = "date")
-    Date date;
-
-
-//    public void process(Map<String, String> data) {
-//        newData.put("id", String.valueOf(data.get("id")));
-//        newData.put("caller", data.get("caller"));
-//        newData.put("phoneNumber", data.get("phoneNumber"));
-//        newData.put("message", data.get("message"));
-//        newData.put("createdAt", String.valueOf(data.get("createdAt")));
-//        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
-//    }
-
-    public String getCaller() {
-        return caller;
+    public String getTitle(){return title;}
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setCaller(String caller) {
-        this.caller = caller;
-    }
+    public String getTyp(){return typ;}
+    public void setTyp(String typ) {this.typ = typ;}
 
-    public String getPhonenumber() {
-        return phonenumber;
-    }
+    public String getVon(){return von;}
+    public void setVon(String von) {this.von = von;}
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
+    public String getAn(){return an;}
+    public void setAn(String an) {this.an = an;}
 
-    public String getMessage() {
-        return message;
-    }
+    public String getDatum(){return datum;}
+    public void setDatum(String datum) {this.datum = datum;}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    public String getDeadline(){return deadline;}
+    public void setDeadline(String deadline) {this.deadline = deadline;}
 
+    public String getMessage(){return message;}
+    public void setMessage(String message) {this.message = message;}
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }
