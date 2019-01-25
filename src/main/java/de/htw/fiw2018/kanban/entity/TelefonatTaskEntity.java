@@ -26,6 +26,9 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     @Column(name = "date")
     Date date;
 
+    // Auswahl aus {geschaeft, referatsueber, langfristig}
+    @Column(name = "category")
+    String category;
 
 //    public void process(Map<String, String> data) {
 //        newData.put("id", String.valueOf(data.get("id")));
