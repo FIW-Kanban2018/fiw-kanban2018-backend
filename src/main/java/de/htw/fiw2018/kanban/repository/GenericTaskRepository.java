@@ -19,4 +19,10 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
     @Query("SELECT t FROM #{#entityName} t WHERE t.id = 'title'")
     Iterable<T> findAllByCategory(String category, Long id);
 
+    //TODO: Query to get all cards saved with category "referatsueber"
+    @Query("SELECT t FROM #{#entityName} t WHERE t.id = 'title'")
+    Iterable<T> findAllByReferat();
+
+
+
 }

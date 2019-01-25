@@ -14,7 +14,6 @@ import java.util.Map;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class GenericTaskEntity implements Serializable {
 
-//    Map<String, String> newData = new HashMap();
 
     // send data as key-value-pairs (json format) with id as key
     // @GeneratedValue indicates that the ID value will be generated automatically
@@ -23,11 +22,15 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     Long id;
 
-//    @Column(name = "created", nullable = false, updatable = false) //readonly
-//    Date created;
+    // Auswahl aus {geschaeft, referatsueber, langfristig, done}
+    @Column(name = "category")
+    String category;
 
-//    @Column(name = "lastmodified", nullable = false)
-//    Date lastmodified;
+    @Column(name = "created", nullable = false, updatable = false) //readonly
+    Date created;
+
+    @Column(name = "lastmodified", nullable = false)
+    Date lastmodified;
 
 
 //    @PreUpdate

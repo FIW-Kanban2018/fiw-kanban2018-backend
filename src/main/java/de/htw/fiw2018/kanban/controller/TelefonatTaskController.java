@@ -1,5 +1,6 @@
 package de.htw.fiw2018.kanban.controller;
 
+import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
 import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,11 @@ public class TelefonatTaskController extends GenericTaskController {
     @DeleteMapping(path = "/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
+    @GetMapping(path = "/geschaeft")
+    public Iterable<GenericTaskEntity> findAllGeschaeft() {
+       // return repo.findAllGeschaeft();
+        return null;
+    }
 
     /**
      * Example request:
@@ -49,7 +55,6 @@ public class TelefonatTaskController extends GenericTaskController {
     public String newTest(@RequestBody TelefonatTaskEntity entity) {
 
         repo.save(entity);
-
         return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }
 

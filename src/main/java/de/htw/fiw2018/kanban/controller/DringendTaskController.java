@@ -20,11 +20,8 @@ public class DringendTaskController extends GenericTaskController {
     @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
-    @PostMapping(path = "/newtask")
-    public String newTest(@RequestBody DringendTaskEntity entity) {
-
+    @PostMapping(path = "/new")
+    public void newCard(@RequestBody DringendTaskEntity entity) {
         repo.save(entity);
-
-        return entity.getTask(); // returns task
     }
 }

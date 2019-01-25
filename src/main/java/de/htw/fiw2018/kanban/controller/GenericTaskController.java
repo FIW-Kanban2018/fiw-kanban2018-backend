@@ -15,8 +15,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 abstract class GenericTaskController<T, Id extends Serializable> {
 
-//    @Autowired
-//    GenericTaskRepository taskRepository;
+    //private GenericTaskRepository taskRepository;
 
     private CrudRepository<T, Id> repository;
 
@@ -30,6 +29,11 @@ abstract class GenericTaskController<T, Id extends Serializable> {
 //        taskRepository.save(data);
     }
 
+    @GetMapping(path = "/referatsueber")
+    public Iterable<GenericTaskEntity> findAllReferatsueber() {
+     //   return taskRepository.findAllByReferat();
+    return null;
+    }
 
     @GetMapping(path = "/hello")
     public String hello(){

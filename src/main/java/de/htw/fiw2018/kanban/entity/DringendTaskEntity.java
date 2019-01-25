@@ -10,13 +10,14 @@ import java.sql.Timestamp;
 public class DringendTaskEntity extends GenericTaskEntity{
 
     @Column(name="task")
-    String task;
+    private String task;
 
     @Column(name="deadline")
-    String deadline;
+    private String deadline;
 
-    @Column(name="timestamp")
-    Timestamp timestamp;
+    @Column(name = "cardCategory", updatable = false)
+    String cardCategory = "dringend";
+
 
     public String getTask(){return task;}
 

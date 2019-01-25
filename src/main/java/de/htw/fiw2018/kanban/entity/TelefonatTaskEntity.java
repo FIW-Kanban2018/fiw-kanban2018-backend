@@ -11,7 +11,6 @@ import java.util.Date;
 // entity will be mapped to a table named TelefonatTaskEntity
 @Entity
 @Table(name = "telefonat")
-//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class TelefonatTaskEntity extends GenericTaskEntity {
 
     @Column(name = "caller")
@@ -26,9 +25,12 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     @Column(name = "date")
     Date date;
 
-    // Auswahl aus {geschaeft, referatsueber, langfristig}
+    // Auswahl aus {geschaeft, referatsueber, langfristig, done}
     @Column(name = "category")
     String category;
+
+    @Column(name = "cardCategory", updatable = false)
+    String cardCategory = "telefonat";
 
 //    public void process(Map<String, String> data) {
 //        newData.put("id", String.valueOf(data.get("id")));
