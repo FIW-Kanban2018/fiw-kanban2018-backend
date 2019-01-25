@@ -25,10 +25,6 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     @Column(name = "date")
     Date date;
 
-    // Auswahl aus {geschaeft, referatsueber, langfristig, done}
-    @Column(name = "category")
-    String category;
-
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "telefonat";
 

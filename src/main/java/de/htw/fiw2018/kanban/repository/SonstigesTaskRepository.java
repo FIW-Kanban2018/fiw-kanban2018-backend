@@ -1,4 +1,6 @@
 package de.htw.fiw2018.kanban.repository;
 
-public interface SonstigesTaskRepository {
+import de.htw.fiw2018.kanban.entity.SonstigesTaskEntity;
+
+public interface SonstigesTaskRepository extends GenericTaskRepository<SonstigesTaskEntity>{
 }
