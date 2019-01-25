@@ -1,7 +1,6 @@
 package de.htw.fiw2018.kanban.controller;
 
 import de.htw.fiw2018.kanban.entity.SonstigesTaskEntity;
-import de.htw.fiw2018.kanban.entity.VeranstaltungTaskEntity;
 import de.htw.fiw2018.kanban.repository.SonstigesTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -6,8 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @NoRepositoryBean
 public interface GenericTaskRepository<T extends GenericTaskEntity> extends CrudRepository<T, Long> {

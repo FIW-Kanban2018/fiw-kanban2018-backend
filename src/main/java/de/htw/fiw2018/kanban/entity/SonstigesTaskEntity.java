@@ -1,7 +1,5 @@
 package de.htw.fiw2018.kanban.entity;
 
-import de.htw.fiw2018.kanban.repository.GenericTaskRepository;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;

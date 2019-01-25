@@ -6,8 +6,6 @@ import javax.persistence.Table;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "veranstaltung")
