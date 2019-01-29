@@ -33,6 +33,10 @@ public class MitarbeiteranmeldenTaskEntity extends GenericTaskEntity {
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "mitarbeiteranmelden";
 
+    @Column(name = "category")
+    String category;
+
+    public String getCardCategory(){return category;}
 
     public String getName() {
         return name;
