@@ -17,8 +17,8 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     @Column(name = "title")
     String title;
 
-    @Column(name = "typ")
-    String typ;
+    @Column(name = "type")
+    String type;
 
     @Column(name = "from")
     String from;
