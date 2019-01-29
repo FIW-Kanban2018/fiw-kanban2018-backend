@@ -5,8 +5,12 @@ import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
 import de.htw.fiw2018.kanban.repository.GenericTaskRepository;
 import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Entity;
+import javax.persistence.PreUpdate;
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @RestController
@@ -69,6 +73,15 @@ public class TelefonatTaskController extends GenericTaskController {
         return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }
 
+    //@PutMapping(path = "/update/{id}")
+       // public void  updateCard (@RequestBody TelefonatTaskEntity update, @PathVariable Long id) {
+      //  repo.findById(id);
+       // update.setCaller(update.getCaller());
+       // update.setMessage(update.getMessage());
+       // repo.save(update);
+        // ResponseEntity.noContent().build();
+
+    }
 
 
-}
+
