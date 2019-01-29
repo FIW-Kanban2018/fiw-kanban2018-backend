@@ -28,5 +28,15 @@ public class DringendTaskEntity extends GenericTaskEntity {
 
     public String getCardCategory(){return cardCategory;}
 
+    public void setTask(String task) {
+        this.task = task;
+    }
 
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

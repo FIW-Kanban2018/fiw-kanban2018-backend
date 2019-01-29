@@ -29,14 +29,48 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "sonstiges";
 
-    public String getTask(){ return task; }
 
-    public Date getDeadline(){ return deadline; }
+    public String getTask() {
+        return task;
+    }
 
-    public ArrayList<String> getTodolist(){ return todolist; }
+    public Date getDeadline() {
+        return deadline;
+    }
 
-    public String getPosttask(){ return posttask; }
+    public ArrayList<String> getTodolist() {
+        return todolist;
+    }
 
-    public String getCategory(){return category;}
+    public String getPosttask() {
+        return posttask;
+    }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public String getCardCategory() {
+        return cardCategory;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public void setTodolist(ArrayList<String> todolist) {
+        this.todolist = todolist;
+    }
+
+    public void setPosttask(String posttask) {
+        this.posttask = posttask;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

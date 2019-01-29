@@ -20,6 +20,7 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     @Column(name = "type")
     String type;
 
+    //'fromm' because 'from' is a reserved word in Java
     @Column(name = "fromm")
     String fromm;
 
@@ -68,5 +69,4 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     public void setCategory(String category) {this.category = category;}
 
     public String getCardCategory(){return cardCategory;}
-    public void setcardCategory(String cardCategory) {this.cardCategory = cardCategory;}
 }

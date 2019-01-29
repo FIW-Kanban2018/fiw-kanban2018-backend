@@ -32,10 +32,6 @@ public class TelefonatTaskController extends GenericTaskController {
         return repo.findAllByCardCategoryGeschaeft();
     }
 
-    @GetMapping(path = "/hello")
-    public String hello(){
-        return "Hello Frau S.!";
-    }
 
     @GetMapping(path = "/all")
     public Iterable<TelefonatTaskEntity> findAll() {
@@ -50,11 +46,6 @@ public class TelefonatTaskController extends GenericTaskController {
     @DeleteMapping(path = "/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
-    @GetMapping(path = "/geschaeft")
-    public Iterable<GenericTaskEntity> findAllGeschaeft() {
-       // return repo.findAllGeschaeft();
-        return null;
-    }
 
     /**
      * Example request:
@@ -68,7 +59,6 @@ public class TelefonatTaskController extends GenericTaskController {
      */
     @PostMapping(path = "/new")
     public String newTest(@RequestBody TelefonatTaskEntity entity) {
-
         repo.save(entity);
         return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }

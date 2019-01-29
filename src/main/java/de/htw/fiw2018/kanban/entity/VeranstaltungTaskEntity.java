@@ -43,27 +43,99 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
     private Date deadline;
 
     @Column(name = "cardCategory", updatable = false)
-    String cardCategory = "veranstaltung";
+    private String cardCategory = "veranstaltung";
 
     @Column(name = "category")
-    String category;
+    private String category;
 
-    public String getCategory(){return category;}
-
-//    @Override
-//    public void process(Map<String, String> data) {
-//        newData.put("id", String.valueOf(data.get("id")));
-//        newData.put("ort", data.get("ort"));
-//        newData.put("dateOfEvent", String.valueOf(data.get("dateOfEvent")));
-//        newData.put("createdAt", String.valueOf(data.get("createdAt")));
-//        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
-//    }
+    public String getTitle() {
+        return title;
+    }
 
     public Date getDate() {
         return date;
     }
 
+    public Time getTime() {
+        return time;
+    }
+
+    public String getClient() {
+        return client;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public ArrayList<String> getParticipants() {
+        return participants;
+    }
+
+    public ArrayList<String> getTodolist() {
+        return todolist;
+    }
+
+    public Date getLastmodified() {
+        return lastmodified;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public String getCardCategory() {
+        return cardCategory;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public void setClient(String client) {
+        this.client = client;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public void setParticipants(ArrayList<String> participants) {
+        this.participants = participants;
+    }
+
+    public void setTodolist(ArrayList<String> todolist) {
+        this.todolist = todolist;
+    }
+
+    public void setLastmodified(Date lastmodified) {
+        this.lastmodified = lastmodified;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
