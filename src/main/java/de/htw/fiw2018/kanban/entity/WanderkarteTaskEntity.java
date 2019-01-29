@@ -50,10 +50,10 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     public void setTyp(String typ) {this.typ = typ;}
 
     public String getFrom(){return from;}
-    public void setFrom(String von) {this.from = from;}
+    public void setFrom(String from) {this.from = from;}
 
     public String getTo(){return to;}
-    public void setTo(String an) {this.to = to;}
+    public void setTo(String to) {this.to = to;}
 
     public Date getDate(){return date;}
     public void setDate(Date date) {this.date = date;}
