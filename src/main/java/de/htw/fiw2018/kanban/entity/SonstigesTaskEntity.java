@@ -23,6 +23,9 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
     @Column(name = "posttask")
     String posttask;
 
+    @Column(name = "category")
+    String category;
+
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "sonstiges";
 
