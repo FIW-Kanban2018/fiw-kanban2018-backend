@@ -37,6 +37,11 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
 //        newData.put("updatedAt", String.valueOf(data.get("updatedAt")));
 //    }
 
+    @Column(name = "category")
+    String category;
+
+    public String getCategory(){return category;}
+
     public String getCaller() {
         return caller;
     }

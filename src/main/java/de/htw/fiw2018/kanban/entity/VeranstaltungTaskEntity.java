@@ -45,6 +45,10 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "veranstaltung";
 
+    @Column(name = "category")
+    String category;
+
+    public String getCategory(){return category;}
 
 //    @Override
 //    public void process(Map<String, String> data) {

@@ -20,12 +20,13 @@ public class DringendTaskEntity extends GenericTaskEntity {
     @Column(name = "category")
     String category;
 
+    public String getCategory(){return category;}
 
     public String getTask(){return task;}
 
     public String getDeadline(){return deadline;}
 
-    public String getCardCategory(){return category;}
+    public String getCardCategory(){return cardCategory;}
 
 
 }
