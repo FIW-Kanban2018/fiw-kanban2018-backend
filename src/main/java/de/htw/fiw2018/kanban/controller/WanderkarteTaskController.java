@@ -1,7 +1,6 @@
 package de.htw.fiw2018.kanban.controller;
 
 import de.htw.fiw2018.kanban.entity.WanderkarteTaskEntity;
-import de.htw.fiw2018.kanban.entity.WanderkarteTaskEntity;
 import de.htw.fiw2018.kanban.repository.WanderkarteTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
