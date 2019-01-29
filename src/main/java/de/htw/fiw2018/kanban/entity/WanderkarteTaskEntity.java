@@ -27,7 +27,7 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     String to;
 
     @Column(name = "date")
-    String date;
+    Date date;
 
     @Column(name = "deadline")
     String deadline;
@@ -39,7 +39,7 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     String category;
 
     @Column(name= "cardCategory")
-    String cardCategory;
+    String cardCategory = "wanderkarte";
 
     public String getTitle(){return title;}
     public void setTitle(String title) {
