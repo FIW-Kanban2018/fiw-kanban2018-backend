@@ -55,8 +55,8 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     public String getTo(){return to;}
     public void setTo(String an) {this.to = to;}
 
-    public String getDate(){return date;}
-    public void setDate(String date) {this.date = date;}
+    public Date getDate(){return date;}
+    public void setDate(Date date) {this.date = date;}
 
     public String getDeadline(){return deadline;}
     public void setDeadline(String deadline) {this.deadline = deadline;}
