@@ -32,4 +32,53 @@ public class MitarbeiteranmeldenTaskEntity extends GenericTaskEntity {
 
     @Column(name = "cardCategory", updatable = false)
     String cardCategory = "mitarbeiteranmelden";
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getInternextern() {
+        return internextern;
+    }
+
+    public void setInternextern(String internextern) {
+        this.internextern = internextern;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getTask(){
+        return task;
+    }
+
+    public void setTask(String task){
+        this.task=task;
+    }
 }
