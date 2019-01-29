@@ -24,10 +24,10 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "category")
     String category;
 
-    @Column(name = "created", nullable = false, updatable = false) //readonly
+    @Column(name = "created")//, nullable = false, updatable = false) //readonly
     Date created;
 
-    @Column(name = "lastmodified", nullable = false)
+    @Column(name = "lastmodified")//, nullable = false)
     Date lastmodified;
 
 
