@@ -35,11 +35,8 @@ public class WanderkarteTaskController extends GenericTaskController {
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
     @PostMapping(path = "/new")
-    public String newTest(@RequestBody WanderkarteTaskEntity entity) {
-
+    public void newCard(@RequestBody WanderkarteTaskEntity entity) {
         repo.save(entity);
-
-        return "Karte mit folgendem Titel wurde erstellt" + entity.getTitle(); // returns "Foo123"
     }
 
 
