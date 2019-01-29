@@ -1,5 +1,6 @@
 package de.htw.fiw2018.kanban.controller;
 
+import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import de.htw.fiw2018.kanban.entity.WanderkarteTaskEntity;
 import de.htw.fiw2018.kanban.repository.WanderkarteTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,6 @@ public class WanderkarteTaskController extends GenericTaskController {
 
     Iterable<WanderkarteTaskEntity> wanderkarteTasks;
 
-    @GetMapping(path = "/hello")
-    public String hello(){
-        return "Hello Frau S.!";
-    }
-
     @GetMapping(path = "/all")
     public Iterable<WanderkarteTaskEntity> findAll() {
         return repo.findAll();
@@ -35,8 +31,9 @@ public class WanderkarteTaskController extends GenericTaskController {
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
     @PostMapping(path = "/new")
-    public void newCard(@RequestBody WanderkarteTaskEntity entity) {
+    public String newCard(@RequestBody WanderkarteTaskEntity entity) {
         repo.save(entity);
+        return entity.getTitle();
     }
 
 
