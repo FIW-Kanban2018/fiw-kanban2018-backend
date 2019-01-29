@@ -46,8 +46,8 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
         this.title = title;
     }
 
-    public String getTyp(){return typ;}
-    public void setTyp(String typ) {this.typ = typ;}
+    public String getType(){return type;}
+    public void setTyp(String type) {this.type = type;}
 
     public String getFrom(){return from;}
     public void setFrom(String from) {this.from = from;}
