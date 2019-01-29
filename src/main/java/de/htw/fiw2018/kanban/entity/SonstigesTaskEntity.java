@@ -37,4 +37,6 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
 
     public String getPosttask(){ return posttask; }
 
+    public String getCategory(){return category;}
+
 }
