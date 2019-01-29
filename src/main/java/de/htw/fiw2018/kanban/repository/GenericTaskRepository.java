@@ -22,5 +22,4 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
     Iterable<T> findAllByReferat();
 
 
-
 }

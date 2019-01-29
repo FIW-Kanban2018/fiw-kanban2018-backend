@@ -2,6 +2,7 @@ package de.htw.fiw2018.kanban.controller;
 
 import de.htw.fiw2018.kanban.entity.GenericTaskEntity;
 import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
+import de.htw.fiw2018.kanban.repository.GenericTaskRepository;
 import de.htw.fiw2018.kanban.repository.TelefonatTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,16 @@ public class TelefonatTaskController extends GenericTaskController {
     private TelefonatTaskRepository repo;
 
     Iterable<TelefonatTaskEntity> telefonatTasks;
+
+    @GetMapping(path = "/referatsueber")
+    public Iterable<Object> findAllReferatsueber() {
+        return repo.findAllByCardCategoryReferat();
+    }
+
+    @GetMapping(path = "/geschaeftszimmer")
+    public Iterable<Object> findAllGeschäftszimmer() {
+        return repo.findAllByCardCategoryGeschaeft();
+    }
 
     @GetMapping(path = "/hello")
     public String hello(){
