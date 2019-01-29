@@ -20,8 +20,8 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     @Column(name = "type")
     String type;
 
-    @Column(name = "from")
-    String from;
+    @Column(name = "fromm")
+    String fromm;
 
     @Column(name = "to")
     String to;
@@ -49,8 +49,8 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     public String getType(){return type;}
     public void setTyp(String type) {this.type = type;}
 
-    public String getFrom(){return from;}
-    public void setFrom(String from) {this.from = from;}
+    public String getFromm(){return fromm;}
+    public void setFromm(String fromm) {this.fromm = fromm;}
 
     public String getTo(){return to;}
     public void setTo(String to) {this.to = to;}
