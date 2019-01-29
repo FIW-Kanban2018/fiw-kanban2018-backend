@@ -49,6 +49,10 @@ public abstract class GenericTaskEntity implements Serializable {
         return id;
     }
 
+    public void setId(Long id){
+        this.id = id;
+    }
+
 //    public Date getCreated() {
 //        return created;
 //    }
