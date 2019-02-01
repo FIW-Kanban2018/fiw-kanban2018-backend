@@ -24,6 +24,6 @@ public interface TelefonatTaskRepository extends GenericTaskRepository<Telefonat
 
     @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'done'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryTodo();
+    List<Object> findAllByCardCategoryDone();
 
 }
