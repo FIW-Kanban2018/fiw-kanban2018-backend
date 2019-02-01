@@ -15,39 +15,39 @@ public class TelefonatTaskController extends GenericTaskController {
 
     @Autowired
     private TelefonatTaskRepository telefonatTaskRepository;
-    @Autowired
-    private DringendTaskRepository dringendTaskRepository;
-    @Autowired
-    private MitarbeiteranmeldenTaskRepository mitarbeiteranmeldenTaskRepository;
-    @Autowired
-    private SonstigesTaskRepository sonstigesTaskRepository;
-    @Autowired
-    private VeranstaltungTaskRepository veranstaltungTaskRepository;
-    @Autowired
-    private WanderkarteTaskRepository wanderkarteTaskRepository;
-
-    Iterable<TelefonatTaskEntity> telefonatTasks;
-    List<Object> referatList = new ArrayList<>();
-    List<Object> geschaeftList = new ArrayList<>();
-    List<Object> LangfristigList = new ArrayList<>();
-    List<Object> doneList = new ArrayList<>();
-
-    @GetMapping(path = "/referatsueber")
-    public Iterable<Object> findAllReferatsueber() {
-        this.referatList.addAll(dringendTaskRepository.findAllByCardCategoryReferat());
-        this.referatList.addAll(telefonatTaskRepository.findAllByCardCategoryReferat());
-        this.referatList.addAll(mitarbeiteranmeldenTaskRepository.findAllByCardCategoryReferat());
-        this.referatList.addAll(sonstigesTaskRepository.findAllByCardCategoryReferat());
-        this.referatList.addAll(veranstaltungTaskRepository.findAllByCardCategoryReferat());
-        this.referatList.addAll(wanderkarteTaskRepository.findAllByCardCategoryReferat());
-        System.out.println("referatList: " + this.referatList.size());
-        return referatList;
-    }
-
-    @GetMapping(path = "/geschaeftszimmer")
-    public Iterable<Object> findAllGeschäftszimmer() {
-        return telefonatTaskRepository.findAllByCardCategoryGeschaeft();
-    }
+//    @Autowired
+//    private DringendTaskRepository dringendTaskRepository;
+//    @Autowired
+//    private MitarbeiteranmeldenTaskRepository mitarbeiteranmeldenTaskRepository;
+//    @Autowired
+//    private SonstigesTaskRepository sonstigesTaskRepository;
+//    @Autowired
+//    private VeranstaltungTaskRepository veranstaltungTaskRepository;
+//    @Autowired
+//    private WanderkarteTaskRepository wanderkarteTaskRepository;
+//
+//    Iterable<TelefonatTaskEntity> telefonatTasks;
+//    List<Object> referatList = new ArrayList<>();
+//    List<Object> geschaeftList = new ArrayList<>();
+//    List<Object> LangfristigList = new ArrayList<>();
+//    List<Object> doneList = new ArrayList<>();
+//
+//    @GetMapping(path = "/referatsueber")
+//    public Iterable<Object> findAllReferatsueber() {
+//        this.referatList.addAll(dringendTaskRepository.findAllByCardCategoryReferat());
+//        this.referatList.addAll(telefonatTaskRepository.findAllByCardCategoryReferat());
+//        this.referatList.addAll(mitarbeiteranmeldenTaskRepository.findAllByCardCategoryReferat());
+//        this.referatList.addAll(sonstigesTaskRepository.findAllByCardCategoryReferat());
+//        this.referatList.addAll(veranstaltungTaskRepository.findAllByCardCategoryReferat());
+//        this.referatList.addAll(wanderkarteTaskRepository.findAllByCardCategoryReferat());
+//        System.out.println("referatList: " + this.referatList.size());
+//        return referatList;
+//    }
+//
+//    @GetMapping(path = "/geschaeftszimmer")
+//    public Iterable<Object> findAllGeschäftszimmer() {
+//        return telefonatTaskRepository.findAllByCardCategoryGeschaeft();
+//    }
 
 
     @GetMapping(path = "/all")
