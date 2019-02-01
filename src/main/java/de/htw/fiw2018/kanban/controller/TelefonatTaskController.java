@@ -21,6 +21,10 @@ public class TelefonatTaskController extends GenericTaskController {
     private TelefonatTaskRepository repo;
 
     Iterable<TelefonatTaskEntity> telefonatTasks;
+    Iterable<Object> dringendListReferat;
+    Iterable<Object> dringendListGeschaeft;
+    Iterable<Object> dringendListLang;
+    Iterable<Object> dringendListDone;
 
     @GetMapping(path = "/referatsueber")
     public Iterable<Object> findAllReferatsueber() {

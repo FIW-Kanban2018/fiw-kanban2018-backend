@@ -8,7 +8,7 @@ import java.util.Date;
 
 
 // If @Table annotation is missing, it is assumed that this
-// entity will be mapped to a table named WanderkarteTaskEntity
+// entity will be mapped recipient a table named WanderkarteTaskEntity
 @Entity
 @Table(name = "wanderkarte")
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -17,15 +17,16 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     @Column(name = "title")
     String title;
 
+    //Aufgabe oder Information
     @Column(name = "type")
     String type;
 
-    //'fromm' because 'from' is a reserved word in Java
-    @Column(name = "fromm")
-    String fromm;
+    //'sender' because 'from' is a reserved word in Java
+    @Column(name = "sender")
+    String sender;
 
-    @Column(name = "to")
-    String to;
+    @Column(name = "recipient")
+    String recipient;
 
     @Column(name = "date")
     Date date;
@@ -50,11 +51,11 @@ public class WanderkarteTaskEntity extends GenericTaskEntity {
     public String getType(){return type;}
     public void setTyp(String type) {this.type = type;}
 
-    public String getFromm(){return fromm;}
-    public void setFromm(String fromm) {this.fromm = fromm;}
+    public String getSender(){return sender;}
+    public void setSender(String sender) {this.sender = sender;}
 
-    public String getTo(){return to;}
-    public void setTo(String to) {this.to = to;}
+    public String getRecipient(){return recipient;}
+    public void setRecipient(String recipient) {this.recipient = recipient;}
 
     public Date getDate(){return date;}
     public void setDate(Date date) {this.date = date;}

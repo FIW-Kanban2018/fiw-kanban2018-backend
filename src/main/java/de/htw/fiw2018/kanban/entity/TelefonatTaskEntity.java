@@ -8,7 +8,7 @@ import java.util.Date;
 
 
 // If @Table annotation is missing, it is assumed that this
-// entity will be mapped to a table named TelefonatTaskEntity
+// entity will be mapped recipient a table named TelefonatTaskEntity
 @Entity
 @Table(name = "telefonat")
 public class TelefonatTaskEntity extends GenericTaskEntity {

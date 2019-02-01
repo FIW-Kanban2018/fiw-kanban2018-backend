@@ -15,7 +15,7 @@ public interface TelefonatTaskRepository extends GenericTaskRepository<Telefonat
     List<Object> findAllByCardCategoryGeschaeft();
 
 
-    @Query(value = "SELECT t.id as tel, t.caller, d.id as dri, d.task " +
+    @Query(value = "SELECT t.id as tel, t.caller, d.id as dri, d.task  as dtask" +
             "FROM telefonat t, dringend d",
             nativeQuery = true)
     List<Object> findAllByCardCategoryReferat();
