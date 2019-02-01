@@ -26,6 +26,8 @@ public class SonstigesTaskController extends GenericTaskController {
         return repo.findById(id);
     }
 
+    //CRUDRepository automatically updates data, if already exists in table
+    //Otherwise it calls the em.persist() function.
     @PostMapping(path = "/new")
     public void newCard(@RequestBody SonstigesTaskEntity entity) {
         repo.save(entity);

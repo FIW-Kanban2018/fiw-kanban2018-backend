@@ -30,10 +30,11 @@ public class WanderkarteTaskController extends GenericTaskController {
     @DeleteMapping(path = "/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
+    //CRUDRepository automatically updates data, if already exists in table
+    //Otherwise it calls the em.persist() function.
     @PostMapping(path = "/new")
-    public String newCard(@RequestBody WanderkarteTaskEntity entity) {
+    public void newCard(@RequestBody WanderkarteTaskEntity entity) {
         repo.save(entity);
-        return entity.getTitle();
     }
 
 

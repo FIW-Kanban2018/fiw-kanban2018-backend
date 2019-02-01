@@ -26,4 +26,5 @@ public interface TelefonatTaskRepository extends GenericTaskRepository<Telefonat
             nativeQuery = true)
     List<Object> findAllByCardCategoryDone();
 
+
 }

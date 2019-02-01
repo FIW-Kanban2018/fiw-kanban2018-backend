@@ -20,6 +20,8 @@ public class DringendTaskController extends GenericTaskController {
     @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
 
+    //CRUDRepository automatically updates data, if already exists in table
+    //Otherwise it calls the em.persist() function.
     @PostMapping(path = "/new")
     public void newCard(@RequestBody DringendTaskEntity entity) {
         repo.save(entity);

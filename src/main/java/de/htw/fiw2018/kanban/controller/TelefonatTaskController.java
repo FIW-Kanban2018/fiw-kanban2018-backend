@@ -5,8 +5,6 @@ import de.htw.fiw2018.kanban.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -15,39 +13,6 @@ public class TelefonatTaskController extends GenericTaskController {
 
     @Autowired
     private TelefonatTaskRepository telefonatTaskRepository;
-//    @Autowired
-//    private DringendTaskRepository dringendTaskRepository;
-//    @Autowired
-//    private MitarbeiteranmeldenTaskRepository mitarbeiteranmeldenTaskRepository;
-//    @Autowired
-//    private SonstigesTaskRepository sonstigesTaskRepository;
-//    @Autowired
-//    private VeranstaltungTaskRepository veranstaltungTaskRepository;
-//    @Autowired
-//    private WanderkarteTaskRepository wanderkarteTaskRepository;
-//
-//    Iterable<TelefonatTaskEntity> telefonatTasks;
-//    List<Object> referatList = new ArrayList<>();
-//    List<Object> geschaeftList = new ArrayList<>();
-//    List<Object> LangfristigList = new ArrayList<>();
-//    List<Object> doneList = new ArrayList<>();
-//
-//    @GetMapping(path = "/referatsueber")
-//    public Iterable<Object> findAllReferatsueber() {
-//        this.referatList.addAll(dringendTaskRepository.findAllByCardCategoryReferat());
-//        this.referatList.addAll(telefonatTaskRepository.findAllByCardCategoryReferat());
-//        this.referatList.addAll(mitarbeiteranmeldenTaskRepository.findAllByCardCategoryReferat());
-//        this.referatList.addAll(sonstigesTaskRepository.findAllByCardCategoryReferat());
-//        this.referatList.addAll(veranstaltungTaskRepository.findAllByCardCategoryReferat());
-//        this.referatList.addAll(wanderkarteTaskRepository.findAllByCardCategoryReferat());
-//        System.out.println("referatList: " + this.referatList.size());
-//        return referatList;
-//    }
-//
-//    @GetMapping(path = "/geschaeftszimmer")
-//    public Iterable<Object> findAllGeschäftszimmer() {
-//        return telefonatTaskRepository.findAllByCardCategoryGeschaeft();
-//    }
 
 
     @GetMapping(path = "/all")
@@ -77,13 +42,15 @@ public class TelefonatTaskController extends GenericTaskController {
      * @param entity
      * @return
      */
+
+    //CRUDRepository automatically updates data, if already exists in table
+    //Otherwise it calls the em.persist() function.
     @PostMapping(path = "/new")
-    public String newTest(@RequestBody TelefonatTaskEntity entity) {
+    public void newTask(@RequestBody TelefonatTaskEntity entity) {
         telefonatTaskRepository.save(entity);
-        return "Foo" + entity.getPhonenumber(); // returns "Foo123"
     }
 
-    //@PutMapping(path = "/update/{id}")
+        //@PutMapping(path = "/update/{id}")
     // public void  updateCard (@RequestBody TelefonatTaskEntity update, @PathVariable Long id) {
     //  telefonatTaskRepository.findById(id);
     // update.setCaller(update.getCaller());
