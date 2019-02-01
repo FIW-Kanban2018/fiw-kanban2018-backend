@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
+import java.util.Optional;
 
 @NoRepositoryBean
 public interface GenericTaskRepository<T extends GenericTaskEntity> extends CrudRepository<T, Long> {
@@ -21,5 +22,5 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
     @Query("SELECT t FROM #{#entityName} t WHERE t.id = 'title'")
     Iterable<T> findAllByReferat();
 
-
+    Optional<T> findById(Long id);
 }

@@ -3,6 +3,7 @@ package de.htw.fiw2018.kanban.controller;
 import de.htw.fiw2018.kanban.entity.SonstigesTaskEntity;
 import de.htw.fiw2018.kanban.repository.SonstigesTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -29,10 +30,26 @@ public class SonstigesTaskController extends GenericTaskController {
     //CRUDRepository automatically updates data, if already exists in table
     //Otherwise it calls the em.persist() function.
     @PostMapping(path = "/new")
-    public void newCard(@RequestBody SonstigesTaskEntity entity) {
+    public ResponseEntity<Object> newCard(@RequestBody SonstigesTaskEntity entity) {
         repo.save(entity);
+        return ResponseEntity.status(201).body("Card successfully created.");
+    }
+
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<Object> updateCard(@PathVariable Long id, @RequestBody SonstigesTaskEntity entity) {
+        Optional<SonstigesTaskEntity> task = repo.findById(id);
+
+        if (!task.isPresent()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            entity.setId(id);
+            repo.save(entity);
+            return ResponseEntity.noContent().build();
+        }
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteTask(@PathVariable Long id) {repo.deleteById(id);}
+    public void deleteTask(@PathVariable Long id) {
+        repo.deleteById(id);
+    }
 }

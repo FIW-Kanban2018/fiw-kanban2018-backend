@@ -1,6 +1,10 @@
 package de.htw.fiw2018.kanban.entity;
 
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -8,6 +12,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Component
+@EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class GenericTaskEntity implements Serializable {
@@ -24,11 +29,15 @@ public abstract class GenericTaskEntity implements Serializable {
     @Column(name = "category")
     String category;
 
-    @Column(name = "created")//, nullable = false, updatable = false) //readonly
-    Date created;
+    @CreatedDate
+    @Column(name = "created", updatable = false)//, nullable = false, updatable = false) //readonly
+            Date created;
 
+    @LastModifiedDate
     @Column(name = "lastmodified")//, nullable = false)
-    Date lastmodified;
+            Date lastmodified;
+//    Date lastmodified = Calendar.getInstance().getTime();
+
 
 
 //    @PreUpdate
@@ -48,10 +57,7 @@ public abstract class GenericTaskEntity implements Serializable {
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id){
-        this.id = id;
-    }
+    public void setId(Long id) {this.id = id;}
 
 //    public Date getCreated() {
 //        return created;
