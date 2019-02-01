@@ -10,14 +10,20 @@ import java.util.List;
 public interface TelefonatTaskRepository extends GenericTaskRepository<TelefonatTaskEntity> {
 
     // Auswahl aus {geschaeft, referatsueber, langfristig, done}
-    @Query(value = "SELECT * FROM dringend d WHERE d.card_category = 'geschaeft'",
+    @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'geschaeft'",
             nativeQuery = true)
     List<Object> findAllByCardCategoryGeschaeft();
 
-
-    @Query(value = "SELECT t.id as tel, t.caller, d.id as dri, d.task  as dtask" +
-            "FROM telefonat t, dringend d",
+    @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'referatsueber'",
             nativeQuery = true)
     List<Object> findAllByCardCategoryReferat();
+
+    @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'langfristig'",
+            nativeQuery = true)
+    List<Object> findAllByCardCategoryLang();
+
+    @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'done'",
+            nativeQuery = true)
+    List<Object> findAllByCardCategoryTodo();
 
 }
