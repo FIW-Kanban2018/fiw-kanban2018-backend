@@ -1,8 +1,6 @@
 package de.htw.fiw2018.kanban.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -17,6 +15,7 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
     Date deadline;
 
     @Column(name = "todolist")
+    @Basic
     ArrayList<String> todolist;
 
     //Folgeaktivität
