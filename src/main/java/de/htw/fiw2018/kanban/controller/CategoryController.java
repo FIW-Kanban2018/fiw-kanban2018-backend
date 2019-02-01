@@ -1,6 +1,5 @@
 package de.htw.fiw2018.kanban.controller;
 
-import de.htw.fiw2018.kanban.entity.TelefonatTaskEntity;
 import de.htw.fiw2018.kanban.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,7 +39,6 @@ public class CategoryController extends GenericTaskController {
         this.referatList.addAll(sonstigesTaskRepository.findAllByCardCategoryReferat());
         this.referatList.addAll(veranstaltungTaskRepository.findAllByCardCategoryReferat());
         this.referatList.addAll(wanderkarteTaskRepository.findAllByCardCategoryReferat());
-        System.out.println("referatList: " + this.referatList.size());
         return this.referatList;
     }
 
@@ -52,17 +50,28 @@ public class CategoryController extends GenericTaskController {
         this.geschaeftList.addAll(sonstigesTaskRepository.findAllByCardCategoryGeschaeft());
         this.geschaeftList.addAll(veranstaltungTaskRepository.findAllByCardCategoryGeschaeft());
         this.geschaeftList.addAll(wanderkarteTaskRepository.findAllByCardCategoryGeschaeft());
-        System.out.println("geschaeftList: " + this.geschaeftList.size());
         return this.geschaeftList;
     }
 
      @GetMapping(path = "/langfristig")
     public Iterable<Object> findAllLangfristig() {
+         this.langfristigList.addAll(dringendTaskRepository.findAllByCardCategoryLang());
+         this.langfristigList.addAll(telefonatTaskRepository.findAllByCardCategoryLang());
+         this.langfristigList.addAll(mitarbeiteranmeldenTaskRepository.findAllByCardCategoryLang());
+         this.langfristigList.addAll(sonstigesTaskRepository.findAllByCardCategoryLang());
+         this.langfristigList.addAll(veranstaltungTaskRepository.findAllByCardCategoryLang());
+         this.langfristigList.addAll(wanderkarteTaskRepository.findAllByCardCategoryLang());
         return this.langfristigList;
     }
 
     @GetMapping(path = "/done")
     public Iterable<Object> findAllDone() {
+        this.doneList.addAll(dringendTaskRepository.findAllByCardCategoryDone());
+        this.doneList.addAll(telefonatTaskRepository.findAllByCardCategoryDone());
+        this.doneList.addAll(mitarbeiteranmeldenTaskRepository.findAllByCardCategoryDone());
+        this.doneList.addAll(sonstigesTaskRepository.findAllByCardCategoryDone());
+        this.doneList.addAll(veranstaltungTaskRepository.findAllByCardCategoryDone());
+        this.doneList.addAll(wanderkarteTaskRepository.findAllByCardCategoryDone());
         return this.doneList;
     }
 
