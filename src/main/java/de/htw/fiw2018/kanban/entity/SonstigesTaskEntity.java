@@ -16,7 +16,7 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
 
     @Column(name = "todolist")
     @Basic
-    ArrayList<String> todolist;
+    String todolist;
 
     //Folgeaktivität
     @Column(name = "posttask")
@@ -37,7 +37,7 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
         return deadline;
     }
 
-    public ArrayList<String> getTodolist() {
+    public String getTodolist() {
         return todolist;
     }
 
@@ -61,7 +61,7 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
         this.deadline = deadline;
     }
 
-    public void setTodolist(ArrayList<String> todolist) {
+    public void setTodolist(String todolist) {
         this.todolist = todolist;
     }
 
