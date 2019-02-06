@@ -28,10 +28,10 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
     private String place;
 
     @Column(name = "participants")
-    private ArrayList<String> participants;
+    private String participants;
 
     @Column(name = "todolist")
-    private ArrayList<String> todolist;
+    private String todolist;
 
     @Column(name = "lastmodified")
     private Date lastmodified;
@@ -68,11 +68,11 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
         return place;
     }
 
-    public ArrayList<String> getParticipants() {
+    public String getParticipants() {
         return participants;
     }
 
-    public ArrayList<String> getTodolist() {
+    public String getTodolist() {
         return todolist;
     }
 
@@ -115,11 +115,11 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
         this.place = place;
     }
 
-    public void setParticipants(ArrayList<String> participants) {
+    public void setParticipants(String participants) {
         this.participants = participants;
     }
 
-    public void setTodolist(ArrayList<String> todolist) {
+    public void setTodolist(String todolist) {
         this.todolist = todolist;
     }
 
