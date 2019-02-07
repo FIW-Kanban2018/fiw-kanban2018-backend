@@ -8,8 +8,9 @@ import javax.persistence.Table;
 @Table(name = "dringend")
 public class DringendTaskEntity extends GenericTaskEntity {
 
-    @Column(name="task")
-    private String task;
+    //this column represents the title
+    @Column(name="title")
+    private String title;
 
     @Column(name="deadline")
     private String deadline;
@@ -22,14 +23,14 @@ public class DringendTaskEntity extends GenericTaskEntity {
 
     public String getCategory(){return category;}
 
-    public String getTask(){return task;}
+    public String getTask(){return title;}
 
     public String getDeadline(){return deadline;}
 
     public String getCardCategory(){return cardCategory;}
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setTask(String title) {
+        this.title = title;
     }
 
     public void setDeadline(String deadline) {

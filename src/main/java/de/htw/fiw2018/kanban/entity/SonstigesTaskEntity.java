@@ -1,15 +1,14 @@
 package de.htw.fiw2018.kanban.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
 @Table(name = "sonstiges")
 public class SonstigesTaskEntity extends GenericTaskEntity {
 
-    @Column(name = "task")
-    String task;
+    @Column(name = "title")
+    String title;
 
     @Column(name = "deadline")
     Date deadline;
@@ -29,8 +28,8 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
     String cardCategory = "sonstiges";
 
 
-    public String getTask() {
-        return task;
+    public String getTitle() {
+        return title;
     }
 
     public Date getDeadline() {
@@ -53,8 +52,8 @@ public class SonstigesTaskEntity extends GenericTaskEntity {
         return cardCategory;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setDeadline(Date deadline) {

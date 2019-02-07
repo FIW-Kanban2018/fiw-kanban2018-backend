@@ -9,8 +9,9 @@ import java.util.Date;
 @Table(name = "mitarbeiteranmelden")
 public class MitarbeiteranmeldenTaskEntity extends GenericTaskEntity {
 
-    @Column(name = "name")
-    String name;
+    //This value represents the employee's name
+    @Column(name = "title")
+    String title;
 
     //Geburtsdatum
     @Column(name = "dob")
@@ -41,11 +42,11 @@ public class MitarbeiteranmeldenTaskEntity extends GenericTaskEntity {
     public String getCardCategory(){return cardCategory;}
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.title = name;
     }
 
     public Date getDob() {

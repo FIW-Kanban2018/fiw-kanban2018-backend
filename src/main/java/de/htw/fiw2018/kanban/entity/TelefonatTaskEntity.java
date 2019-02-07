@@ -13,8 +13,9 @@ import java.util.Date;
 @Table(name = "telefonat")
 public class TelefonatTaskEntity extends GenericTaskEntity {
 
-    @Column(name = "caller")
-    String caller;
+    //this represents the caller's name
+    @Column(name = "title")
+    String title;
 
     @Column(name = "message")
     String message;
@@ -34,11 +35,11 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
     public String getCategory(){return category;}
 
     public String getCaller() {
-        return caller;
+        return title;
     }
 
     public void setCaller(String caller) {
-        this.caller = caller;
+        this.title = caller;
     }
 
     public String getPhonenumber() {
