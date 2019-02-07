@@ -29,10 +29,7 @@ public class CategoryController extends GenericTaskController {
     @Autowired
     private WanderkarteTaskRepository wanderkarteTaskRepository;
 
-    List<GenericTaskEntity> referatList = new ArrayList<>();
-    List<GenericTaskEntity> geschaeftList = new ArrayList<>();
-    List<GenericTaskEntity> langfristigList = new ArrayList<>();
-    List<GenericTaskEntity> doneList = new ArrayList<>();
+
 
     @GetMapping(path = "/referatsueber")
     public List<GenericTaskEntity> findAllReferatsueber() {
