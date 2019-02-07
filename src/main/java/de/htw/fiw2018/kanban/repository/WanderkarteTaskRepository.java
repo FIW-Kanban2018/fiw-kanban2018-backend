@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface WanderkarteTaskRepository extends GenericTaskRepository<WanderkarteTaskEntity> {
@@ -12,17 +13,17 @@ public interface WanderkarteTaskRepository extends GenericTaskRepository<Wanderk
     // Auswahl aus {geschaeft, referatsueber, langfristig, done}
     @Query(value = "SELECT * FROM wanderkarte w WHERE w.category = 'geschaeft'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryGeschaeft();
+    List<WanderkarteTaskEntity> findAllByCardCategoryGeschaeft();
 
     @Query(value = "SELECT * FROM wanderkarte w WHERE w.category = 'referatsueber'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryReferat();
+    List<WanderkarteTaskEntity> findAllByCardCategoryReferat();
 
     @Query(value = "SELECT * FROM wanderkarte w WHERE w.category = 'langfristig'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryLang();
+    List<WanderkarteTaskEntity> findAllByCardCategoryLang();
 
     @Query(value = "SELECT * FROM wanderkarte w WHERE w.category = 'done'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryDone();
+    List<WanderkarteTaskEntity> findAllByCardCategoryDone();
 }

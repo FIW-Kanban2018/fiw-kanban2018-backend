@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface TelefonatTaskRepository extends GenericTaskRepository<TelefonatTaskEntity> {
@@ -12,19 +13,19 @@ public interface TelefonatTaskRepository extends GenericTaskRepository<Telefonat
     // Auswahl aus {geschaeft, referatsueber, langfristig, done}
     @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'geschaeft'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryGeschaeft();
+    List<TelefonatTaskEntity> findAllByCardCategoryGeschaeft();
 
     @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'referatsueber'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryReferat();
+    List<TelefonatTaskEntity> findAllByCardCategoryReferat();
 
     @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'langfristig'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryLang();
+    List<TelefonatTaskEntity> findAllByCardCategoryLang();
 
     @Query(value = "SELECT * FROM telefonat t WHERE t.category = 'done'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryDone();
+    List<TelefonatTaskEntity> findAllByCardCategoryDone();
 
 
 }

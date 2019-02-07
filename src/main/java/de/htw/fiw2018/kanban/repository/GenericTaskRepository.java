@@ -22,5 +22,4 @@ public interface GenericTaskRepository<T extends GenericTaskEntity> extends Crud
     @Query("SELECT t FROM #{#entityName} t WHERE t.id = 'title'")
     Iterable<T> findAllByReferat();
 
-    Optional<T> findById(Long id);
 }

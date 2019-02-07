@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface VeranstaltungTaskRepository extends GenericTaskRepository<VeranstaltungTaskEntity>{
@@ -12,17 +13,17 @@ public interface VeranstaltungTaskRepository extends GenericTaskRepository<Veran
     // Auswahl aus {geschaeft, referatsueber, langfristig, done}
     @Query(value = "SELECT * FROM veranstaltung t WHERE t.category = 'geschaeft'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryGeschaeft();
+    List<VeranstaltungTaskEntity> findAllByCardCategoryGeschaeft();
 
     @Query(value = "SELECT * FROM veranstaltung t WHERE t.category = 'referatsueber'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryReferat();
+    List<VeranstaltungTaskEntity> findAllByCardCategoryReferat();
 
     @Query(value = "SELECT * FROM veranstaltung t WHERE t.category = 'langfristig'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryLang();
+    List<VeranstaltungTaskEntity> findAllByCardCategoryLang();
 
     @Query(value = "SELECT * FROM veranstaltung t WHERE t.category = 'done'",
             nativeQuery = true)
-    List<Object> findAllByCardCategoryDone();
+    List<VeranstaltungTaskEntity> findAllByCardCategoryDone();
 }
