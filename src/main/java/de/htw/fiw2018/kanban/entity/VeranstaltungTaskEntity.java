@@ -18,7 +18,7 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
     private Date date;
 
     @Column(name = "time")
-    private Time time;
+    private String time;
 
     //Auftraggeber
     @Column(name = "client")
@@ -56,8 +56,8 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
         return date;
     }
 
-    public Time getTime() {
-        return time;
+    public String getTime() {
+        return this.time;
     }
 
     public String getClient() {
@@ -103,7 +103,7 @@ public class VeranstaltungTaskEntity extends GenericTaskEntity {
         this.date = date;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
