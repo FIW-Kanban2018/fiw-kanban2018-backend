@@ -58,6 +58,7 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
         this.message = message;
     }
 
+    public String getCardCategory(){return cardCategory;}
 
     public Date getDate() {
         return date;
