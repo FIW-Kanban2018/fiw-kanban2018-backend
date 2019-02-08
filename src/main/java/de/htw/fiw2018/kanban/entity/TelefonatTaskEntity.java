@@ -34,12 +34,12 @@ public class TelefonatTaskEntity extends GenericTaskEntity {
 
     public String getCategory(){return category;}
 
-    public String getCaller() {
+    public String getTitle() {
         return title;
     }
 
-    public void setCaller(String caller) {
-        this.title = caller;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPhonenumber() {

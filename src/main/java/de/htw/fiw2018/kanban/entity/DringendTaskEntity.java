@@ -23,13 +23,13 @@ public class DringendTaskEntity extends GenericTaskEntity {
 
     public String getCategory(){return category;}
 
-    public String getTask(){return title;}
+    public String getTitle(){return title;}
 
     public String getDeadline(){return deadline;}
 
     public String getCardCategory(){return cardCategory;}
 
-    public void setTask(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
